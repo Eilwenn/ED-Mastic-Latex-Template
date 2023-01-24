@@ -1,0 +1,56 @@
+\markboth{}{}
+% Plus petite marge du bas pour la quatrième de couverture
+% Shorter bottom margin for the back cover
+\newgeometry{inner=30mm,outer=20mm,top=40mm,bottom=20mm}
+
+%insertion de l'image de fond du dos (resume)
+%background image for resume (back)
+\backcoverheader
+
+% Switch font style to back cover style
+\selectfontbackcover{ % Font style change is limited to this page using braces, just in case
+
+\titleFR{Explicabilité des modèles profonds et méthodologie pour son évaluation : application aux données textuelles de Pôle emploi}
+
+\keywordsFR{Apprentissage profond, Explicabilité, Réseaux de Neurones, Intelligence Artificielle }
+
+\abstractFR{
+% contexte : IA ++, legislation
+L'intelligence Artificielle fait partie de notre quotidien. Les modèles développés sont de plus en plus complexes. Les régulations telles que la Loi Pour une République Numérique orientent les développements logiciels vers plus d'éthique et d'explicabilité.
+% domaine émergent : XAI
+Comprendre le fonctionnement des modèles profonds a un intérêt technique et humain. Les solution proposées par la communauté sont nombreuses, et il n'y a pas de méthode miracle répondant à toutes les problématiques.
+% Notre contribution dans ce contexte
+Nous abordons la question suivante : comment intégrer l'explicabilité dans un projet d'IA basé sur des techniques d'apprentissage profond?
+
+% Plan
+Après un état de l'art présentant la richesse de la littérature du domaine, nous présentons le contexte et les prérequis de nos travaux.
+Ensuite nous présentons un protocole d'évaluation d'explications locales et une méthodologie modulaire de caractérisation globale du modèle.
+Enfin, nous montrons que nos travaux sont intégrés à leur environnement industriel.
+
+% Nos résultats
+Ces travaux résultent en l'obtention d'outils concrets permettant au lecteur d'appréhender la richesse des outils d'explicabilité à sa disposition.
+}
+
+\titleEN{Explainability of deep models and methodology for its evaluation: application to textual data from Pôle emploi}
+
+\keywordsEN{Deep learning, Explainability, Neural Networks, Artificial Intelligence}
+
+\abstractEN{ % context : AI ++, legislation
+Artificial intelligence is part of our daily life. The models developed are more and more complex. Regulations such as the French Law for a Digital Republic (Loi Pour une République Numérique) are directing software development towards more ethics and explainability.
+% emerging field: XAI
+Understanding the functioning of deep models is of technical and human interest. The solutions proposed by the community are numerous, and there is no miracle method that answers all the problems.
+% Our contribution in this context
+We address the following question: how to integrate explainability in an AI project based on deep learning techniques?
+
+% Plan
+After a state of the art presenting the richness of the literature in the field, we present the context and prerequisites for our work.
+Then we present a protocol for evaluating local explanations and a modular methodology for global model characterization.
+Finally, we show that our work is integrated into its industrial environment.
+
+% Our results
+This work results in concrete tools allowing the reader to apprehend the richness of the explicability tools at their disposal.
+}
+
+% Rétablit les marges d'origines
+% Restore original margin settings
+\restoregeometry

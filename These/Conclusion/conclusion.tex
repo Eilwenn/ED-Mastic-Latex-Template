@@ -1,0 +1,45 @@
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+\chaptermark{Conclusion}
+
+% environ 5P aussi
+\section*{Apports de la thèse} % Todo ajout résultats concrets
+
+Dans cette thèse, nous avons présenté des moyens de comprendre des modèles profonds dans le cadre de l'analyse de textes. L'analyse de l'état de l'art montre la forte diversité des types d'explications existantes. Les méthodes de génération d'explications, notamment locales, sont par conséquent également nombreuses. Cette diversité met en avant l'importance du contexte et du but d'une explication.
+Un jeu de données a été créé en collectant des données et en annotant manuellement des explications de référence associées.
+
+Un test d'utilisabilité réalisé avec des utilisateurs experts a servi au développement d'interfaces d'explications locales dans un démonstrateur. Les interfaces permettent la visualisation d'explications adaptées au langage naturel.
+Le test d'utilisabilité a donné l'idée d'une interface non envisagée avant, basée sur les règles métier. Les retours des experts du domaine ont relevé que les systèmes d'explications les plus complexes ne mènent pas nécessairement aux interfaces les plus appréciées des utilisateurs.
+
+Nous nous sommes ensuite concentrés sur une des interfaces, à savoir le surlignage de mots importants. Nous avons appliqué deux méthodes de génération d'explications locales de la littérature : les ancres \cite{Ribeiro2018} et les explications par attention \cite{Lin2017}. Les explications locales permettent de comprendre un résultat spécifique d'un modèle d'intelligence artificielle.
+
+Nous avons mis en place un protocole de comparaison d'explications locales avec et sans utilisateurs. Pour cela, nous avons utilisé les données annotées avec explications de référence, les explications générées, et le démonstrateur développé. Cette comparaison nous a permis d'effectuer un choix basé sur des mesures objectives. Pour le cas d'usage LEGO, la méthode des ancres a donné les meilleurs résultats, tandis que l'attention a été plus pertinente pour le cas d'usage Yelp. L'analyse des préférences utilisateurs a permis de constater que, malgré l'utilisation d'une documentation experte pour définir des explications de références, celles-ci ne correspond pas aux attentes des utilisateurs. Nos discussions avec les participants des expérimentations ont démontré que ces derniers n'étaient pas en accord sur la définition de ces explications, et qu'un travail de concertation est nécessaire. Grâce à ces travaux, nous avons déterminé une mesure de performance cible : $performance = \frac{e_{generee} \cap e}{e_{attendue} \cup e} \frac{\alpha}{len(e)}$.
+Par ailleurs, nous avons été confrontés à des problématiques spécifiques au langage naturel : l'importance du contexte des mots, mais également présence de mots vides de sens, souhaitée par une partie des utilisateurs.
+
+Une méthode modulaire adaptable de création d'explications globales a été conçue, implémentée et appliquée à nos données. Cette méthode est une aide à la création d'un modèle mental pour l'utilisateur. Elle permet une meilleure appréhension du comportement du modèle.
+
+Nous avons enfin montré que les travaux sont intégrés au cadre logiciel de Pôle emploi et inscrits dans les engagements éthiques de l'établissement. Nous avons établi leur impact positif dans l'atteinte des objectifs opérationnels de la charte éthique.
+
+\section*{Perspectives}
+
+% - créer un gros dataset de d'explications idéales
+La comparaison des explications par les utilisateurs a permis de constater une faible adhérence aux explications générées. Nous en déduisons qu'il serait pertinent d'avoir des utilisateurs à disposition sur un temps plus long, afin de définir ces explications idéales. Nous pourrions alors annoter avec eux, de façon collégiale, un jeu de données avec explications de référence plus conséquent.
+
+Avec un tel jeu de données, il serait intéressant de relancer le protocole de comparaison d'explications, et ainsi affiner la mesure de performance des explications adaptées à nos utilisateurs.
+Par ailleurs, cette comparaison peut être complétée en mesurant les performances de réalisation de l'acte métier avec et sans explications. Cela aiderait à déterminer la quantité d'offres qui sont validées malgré une alerte. Cela peut aussi déterminer si l'ajout de l'explication permet d'améliorer la rapidité ou la qualité des corrections.
+
+Maintenant que nous avons une stratégie d'évaluation des explications, nous pouvons envisager de faire apprendre à un modèle à générer ses explications par attention, avec une fonction de coût qui pénaliserai les ``mauvaises'' distributions d'attention. Une solution pour pallier à ce problème est d'apprendre des explications attendues sous forme de cartes d'attention, générées par des utilisateurs humains~\cite{Bao2018}. Cet apprentissage peut se faire de façon active~\cite{Teso2019}.
+
+Nous avons également créé des explications globales du comportement d'un modèle. Grâce à ces travaux, il est possible d'appliquer une correction du jeu d'entraînement du modèle, issu des explications générées. Mesurer un éventuel gain ou perte de performance d'un modèle après une telle correction serait une preuve de valeur pertinente.
+Ces travaux nous amènent à proposer de mesurer la fidélité du modèle mental des utilisateurs, tel que cela a été réalisé dans la littérature. Encore une fois les expérimentations avec utilisateurs nécessitent des temps longs, mais sont enrichissantes. %Enfin, une comparaison du temps de calcul entre notre choix d'implémentation (SVM) et d'autres méthodes d'explicabilité globale peut compléter la mesure de valeur de la solution proposée.
+
+% Perspectives
+% Pour la suite, il serait intéressant de généraliser les travaux aux cas multi-labels.
+Les explications globales présentées dans le chapitre 5 sont basées sur des contre-exemples. Une piste d'approfondissement de ces travaux serait la mesure et l'optimisation de la pertinence d'un contre-exemple en fonction d'un exemple précis. Obtenir des performances suffisantes permettrait de proposer des corrections de texte.
+
+Nos travaux nous amènent à mieux comprendre le fonctionnement des modèles profonds dans un cadre naïf. Les attaques adversaires, permettant de fausser les résultats d'un modèle, forment une menace. Les explications peuvent être faussées au même titre que les résultats~\cite{Dombrowski2019}.
+Nous proposons de se pencher sur la question complémentaire : est-ce que l'explicabilité peut aider à se prémunir de certaines attaques ? Le cas des ``déclencheurs'' mérite d'être étudié. Ces artefacts non perceptibles, issus de données d'entraînement piégées, détériorent les performances des modèles. Il serait intéressant de tenter de détecter non seulement ces déclencheurs via des explications locales, mais également les données d'apprentissage piégées ayant créé ce déclencheur grâce à l'analyse globale du modèle.
+
+La dérive des données entraîne la dégradation des modèles d'IA en production au fil du temps. Avec les explications globales que nous proposons, basées sur les données d'entraînement, nous pouvons aller plus loin et imaginer détecter la dérive des données.
+
+Nos travaux ont apporté des solutions applicables au cadre industriel, tout en ajoutant des contraintes : calculs supplémentaires pour les explications, nécessité de conserver les données d'entraînement d'un modèle, etc. L'impact opérationnel de ces contraintes pour les outils en production mérite d'être mesuré à court et moyen terme. De même, il serait pertinent d'étudier l'impact de ces mesures sur la capacité à suivre les recommandations de développements éco-responsables.

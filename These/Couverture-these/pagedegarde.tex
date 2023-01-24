@@ -1,0 +1,82 @@
+% La page de garde est en français
+% The front cover is in French
+\selectlanguage{french}
+
+% Inclure les infos de chaque établissement
+% Include each institution data
+\input{./Couverture-these/liste-ecoles-etablissements.tex}
+
+% Inclure infos de l'école doctorale
+% Include doctoral school data
+% (3M ALL BS DSP EDGE EGAAL ELICC MathSTIC SML SPI STT)
+\ecoledoctorale{MathSTIC}
+
+% Inclure infos de l'établissement
+% Include institution data
+\etablissement{UN}
+
+%Inscrivez ici votre sp\'{e}cialit\'{e} (voir liste des sp\'{e}cialit\'{e}s sur le site de votre \'{e}cole doctorale)
+%Indicate the domain (see list of domains in your ecole doctorale)
+\spec{Informatique}
+
+%Attention : le pr\'{e}nom doit être en minuscules (Jean) et le NOM en majuscules (BRITTEF)
+%Attention : the first name in small letters and the name in Capital letters
+\author{Gaëlle JOUIS}
+
+% Donner le titre complet de la th\`{e}se, \'{e}ventuellement le sous titre, si n\'{e}cessaire sur plusieurs lignes
+% \title{Explicabilité des modèles profonds sur des données à composante textuelle}
+\title{Explicabilité des modèles profonds et méthodologie pour son \mbox{évaluation}}
+% \lesoustitre{Entre modèle explicable et visualisation}
+\lesoustitre{Application aux données textuelles de Pôle emploi}
+
+%Indiquer la date et le lieu de soutenance de la th\`{e}se
+\date{14 Février 2023}
+\lieu{Nantes Université}
+
+%Indiquer le nom du (ou des) laboratoire (s) dans le(s)quel(s) le travail de th\`{e}se a \'{e}t\'{e} effectu\'{e}, indiquer aussi si souhait\'{e} le nom de la (les) facult\'{e}(s) (UFR, \'{e}cole(s), Institut(s), Centre(s)...), son (leurs) adresse(s)...
+%Indicates the name (or names) of research laboratories where the work has been done as well as (if desired) the names of faculties (UFR, Schools, institution...
+\uniterecherche{umr6004 – LS2N}
+
+%Indiquer le Numero de th\`{e}se, si cela est opportun, ou laisser vide pour faire disparaitre cet ligne de la couverture
+%Indicate the number of the thesis if there is one. otherwise leave empty so the line disappeurs on the cover
+\numthese{2019-0989} % \numthese{}
+
+%Indiquer le Pr\'{e}nom en minuscules et le Nom en majuscules, le titre de la personne et l’\'{e}tablissement dans lequel il effectue sa recherche
+%Exemples :  Examples :
+%%%- Professeur, Universit\'{e} d’Angers
+%%%- Chercheur, CNRS, \'{e}cole Centrale de Nantes
+%%%-  Professeur d’universit\'{e} – Praticien Hospitalier, Universit\'{e} Paris V
+%%%-  Maitre de conf\'{e}rences, Oniris
+%%%- Charg\'{e} de recherche, INSERM, HDR, Universit\'{e} de Tours
+\jury{
+{\normalTwelve \textbf{Rapporteurs avant soutenance :}}\\ \newline
+\footnotesizeTwelve
+\begin{tabular}{@{}ll}
+Céline HUDELOT & Professeure des universités - CentraleSupélec \\
+Philippe LENCA  &  Professeur des universités - IMT Atlantique \\
+\end{tabular}
+
+\vspace{\baselineskip}
+{\normalTwelve \textbf{Composition du Jury :}}\\
+% {\fontsize{9.5}{11}\selectfont {\textcolor{red}{\textit{Attention, en cas d’absence d’un des membres du Jury le jour de la soutenance, la composition du jury doit être revue pour s’assurer qu’elle est conforme et devra être répercutée sur la couverture de thèse}}}}\\ \newline
+\footnotesizeTwelve
+\begin{tabular}{@{}lll}
+
+% Pr\'{e}sident :        & Pr\'{e}nom NOM & Fonction et \'{e}tablissement d'exercice \textit{(à préciser après la soutenance)} \\
+Examinateurs :         & Richard DUFOUR  & Professeur des Universités - Nantes Université\\
+                       & Gilles VENTURINI & Professeur des Universités - Ecole Polytechnique de l'Université de Tours \\
+
+Dir. de th\`{e}se :    & Harold MOUCHERE & Professeur des Universités - Nantes Université \\
+Co-dir. de th\`{e}se : & Fabien PICAROUGNE & Maitre de conférences - Nantes Université \\
+\end{tabular}
+
+\vspace{\baselineskip}
+{\normalTwelve \textbf{Invit\'{e}(s) :}}\\ \newline
+\footnotesizeTwelve
+\begin{tabular}{@{}ll}
+ Alexandre HARDOUIN & Scientifique des données - Pôle Emploi \\
+\end{tabular}
+}
+
+
+\maketitle

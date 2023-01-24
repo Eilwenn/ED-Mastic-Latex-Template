@@ -1,0 +1,102 @@
+% Ce fichier main.tex est le fichier principal \`{a} partir duquel tout est g\'{e}n\'{e}r\'{e}
+% This file is the main file where the final document is generated
+\documentclass{these-dbl}
+
+% Remplir les metadonnees du pdf
+% Fill the pdf metadata
+\hypersetup{
+%    pdfauthor   = {XYZ},
+%    pdftitle    = {Th\`{e}se de doctorat de XYZ},
+%    pdfsubject  = {Th\`{e}se de doctorat de XYZ},
+%    pdfkeywords = {mots-cl\'{e}s},
+}
+
+\geometry{vmargin=4.0cm}
+
+% Spécifier vos fichiers de bibliographie
+% Specify you bibliography files here
+\addbibresource{references.bib}
+
+% Libs LaTeX :
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{epigraph}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\begin{document}
+
+% Page de garde avec commande \maketitle
+\input{./Couverture-these/pagedegarde}
+
+% Sélectionner la langue du contenu suivant cette ligne
+\selectlanguage{french}
+
+% Inclusion du chapitre remerciement
+% \clearemptydoublepage
+% \input{./Acknowledgement/acknowledgement}
+
+% Première de couverture
+\frontmatter
+\clearemptydoublepage
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents %sommaire %table of content  \shorttableofcontents{Sommaire}{0}
+
+\clearemptydoublepage
+\input{./Introduction/introduction}
+
+% “C'est dans la pratique qu'il faut que l'homme prouve la vérité.”
+% De Karl Marx / Thèses sur Feuerbach
+% Pluralitas non est ponenda sine necessitate
+% (les multiples ne doivent pas être utilisés sans nécessité, ou encore ``l'explication la plus simple est généralement la bonne'') , Guillaume d'Ockham,
+
+\clearemptydoublepage
+\input{./S1-Comment_evaluer_une_explication/chapitre1}
+
+\clearemptydoublepage
+\input{./S2-Explicabilite_locale/chapitre2}
+
+\clearemptydoublepage
+\input{./S3-Comparaison_de_methodes/chapitre3}
+
+\clearemptydoublepage
+\input{./S4-Explicabilite_globale/chapitre4}
+
+\clearemptydoublepage
+\input{./S5-Presentation_du_template_nlp/chapitre5}
+
+\clearemptydoublepage
+\backmatter
+\input{./Conclusion/conclusion}
+
+\appendix
+\clearemptydoublepage
+\backmatter
+\input{./Annexes/annexes.tex}
+
+% Chapitre pour la bibliographie
+\clearemptydoublepage
+\phantomsection % To have a correct link in the table of contents
+\addcontentsline{toc}{chapter}{Bibliographie}
+%
+% % nocite: Pour citer la totalit\'{e} des r\'{e}f\'{e}rences contenues dans le fichier biblio
+
+\addcontentsline{toc}{section}{Publications de l'autrice}
+\printbibliography[heading=published,keyword=published]
+
+\printbibliography[heading=publishing,keyword=publishing]
+\addcontentsline{toc}{section}{À paraître}
+\newpage
+
+\printbibliography[heading=references,keyword=reference]
+\addcontentsline{toc}{section}{Bibliographie}
+
+\clearemptydoublepage
+% Pour avoir la quatrième de couverture sur une page paire
+\cleartoevenpage[\thispagestyle{empty}]
+\input{./Couverture-these/resume}
+
+\end{document}
