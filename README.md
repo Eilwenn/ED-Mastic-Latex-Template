@@ -169,13 +169,12 @@ Currently the latex default font is the one used for the content.
 
 To propose changes, (1) you first have to request access to this repository (top page link, [HOWTO](https://docs.gitlab.com/ee/user/project/members/#project-membership-and-requesting-access)), (2) push your branch to this repository once access is granted, and finally (3) create a pull request with your proposed changes. Or just create an issue.
 
-Maintainers: Pierre-Louis Roman (romanp@usi.ch).
+Maintainers: Gaëlle Jouis (gaelle.jouis@pole-emploi.fr) 
 
-Contributors: Louiza Yala (original & main developer), Josquin Debaz, Pierre-Louis Roman, Lucas Bourneuf, Corentin Guezenoc, Clément Elbaz, Florian Arrestier, Alexandre Honorat.
 
-Upstream git repository: https://gitlab.inria.fr/ed-mathstic/latex-template
-
-Previous upstream git repository (2019-2020): https://gitlab.inria.fr/proman/mathstic-thesis-template
+Previous upstream git repository (2019-2020): 
+- https://gitlab.inria.fr/proman/mathstic-thesis-template
+-  https://gitlab.inria.fr/ed-mathstic/latex-template (fork) 
 
 Alternative repositories with a squashed history:
 - https://github.com/remolaz/PhD_Thesis_Template_MathSTIC
